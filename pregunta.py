@@ -30,7 +30,7 @@ def ingest_data():
         else:      
             newdf.iloc[c-1]['principales_palabras_clave']+=" "+datos.iloc[i]['principales_palabras_clave']
 
-    newdf['cantidad_de_palabras_clave'] = newdf['cantidad_de_palabras_clave'].astype('int')       
+    newdf['cluster'] = newdf['cluster'].astype('int')       
     newdf['cantidad_de_palabras_clave'] = newdf['cantidad_de_palabras_clave'].astype('int')
     newdf['porcentaje_de_palabras_clave']=newdf['porcentaje_de_palabras_clave'].apply(lambda i:float(i.split(',')[0])+float('0.'+i.split(',')[1][0]))
     newdf['principales_palabras_clave']=newdf['principales_palabras_clave'].apply(lambda x:x[:-1] if x[-1]=='.' else x)
